@@ -203,6 +203,11 @@
   cursor: pointer;
 }
 
+.menuBackdrop,
+.mobileNav {
+  display: none;
+}
+
 @media (max-width: 1450px) {
   .mainContainer {
     width: calc(100% - 36px);
@@ -237,6 +242,143 @@
 
   .menuButton {
     display: grid;
+  }
+
+  .menuBackdrop {
+    position: fixed;
+    z-index: 1001;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    display: block;
+    background: rgba(3, 15, 22, 0.62);
+    cursor: pointer;
+  }
+
+  .mobileNav {
+    position: fixed;
+    z-index: 1002;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(370px, 88vw);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background: #ffffff;
+    box-shadow: -18px 0 46px rgba(0, 0, 0, 0.22);
+  }
+
+  .mobileNavHeader {
+    min-height: 46px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e4ecee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .mobileNavHeader img {
+    width: 145px;
+    height: auto;
+  }
+
+  .mobileNavHeader button {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid #dce7e9;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #ffffff;
+    color: #081923;
+    cursor: pointer;
+  }
+
+  .mobileLinks {
+    display: grid;
+    padding: 16px 0;
+  }
+
+  .mobileLinks a {
+    min-height: 48px;
+    padding: 0 8px;
+    border-bottom: 1px solid #edf2f3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #182b34;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .mobileLinks a span {
+    color: #0aaa91;
+    font-size: 18px;
+  }
+
+  .mobileLinks .mobileActiveLink {
+    color: #07977f;
+    box-shadow: inset 3px 0 0 #10c9ae;
+    padding-left: 14px;
+  }
+
+  .mobileNavFooter {
+    margin-top: auto;
+    padding-top: 18px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .mobilePhone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #081923;
+    text-decoration: none;
+  }
+
+  .mobilePhone > span {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mobilePhone strong {
+    font-size: 15px;
+  }
+
+  .mobilePhone small {
+    color: #65767d;
+    font-size: 9px;
+    font-weight: 800;
+  }
+
+  .mobileAppointment {
+    min-height: 46px;
+    padding: 0 16px;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #07aa8d;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .mobileNav button:focus-visible,
+  .mobileNav a:focus-visible,
+  .menuButton:focus-visible {
+    outline: 3px solid #10c9ae;
+    outline-offset: 3px;
   }
 }
 
