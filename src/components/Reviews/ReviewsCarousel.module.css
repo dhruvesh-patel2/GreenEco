@@ -1,0 +1,180 @@
+.wrapper {
+  max-width: 980px;
+  margin: 22px auto 0;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: #53627a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.summary strong {
+  color: #081923;
+  font-size: 22px;
+}
+
+.summaryStars,
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #f9b400;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 16px;
+}
+
+.carousel > button {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #dfe8ec;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  color: #081923;
+  cursor: pointer;
+  box-shadow: 0 7px 22px rgba(8, 25, 35, 0.09);
+}
+
+.card {
+  min-height: 210px;
+  padding: 26px 30px 24px;
+  border: 1px solid #dfe8ec;
+  border-top: 4px solid #10c9ae;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 13px 34px rgba(8, 25, 35, 0.08);
+}
+
+.cardHeader {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #dff9f4;
+  color: #078b76;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardHeader > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cardHeader strong {
+  color: #081923;
+  font-size: 16px;
+}
+
+.cardHeader span {
+  color: #718094;
+  font-size: 12px;
+}
+
+.googleMark {
+  color: #4285f4 !important;
+  font-size: 15px !important;
+  font-weight: 800;
+}
+
+.stars {
+  margin-top: 15px;
+}
+
+.card p {
+  margin: 12px 0 18px;
+  color: #334454;
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 600;
+}
+
+.card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #079b83;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #dce5e9;
+  cursor: pointer;
+}
+
+.dots .activeDot {
+  width: 22px;
+  border-radius: 999px;
+  background: #10c9ae;
+}
+
+@media (max-width: 700px) {
+  .summary {
+    flex-wrap: wrap;
+  }
+
+  .carousel {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    gap: 7px;
+  }
+
+  .carousel > button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .card {
+    min-height: 250px;
+    padding: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .googleMark {
+    display: none;
+  }
+}

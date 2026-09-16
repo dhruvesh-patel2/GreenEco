@@ -1,0 +1,7 @@
+.placeholder { width: 100%; min-height: 280px; padding: 24px; border: 1px solid #dce9e9; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; background: #f4f8f8; color: #081923; text-align: center; }
+.placeholder svg { color: #0aaa91; }
+.placeholder strong { font-size: 18px; }
+.placeholder p { max-width: 430px; margin: 0; color: #586a71; font-size: 13px; line-height: 1.5; }
+.placeholder button { min-height: 40px; margin-top: 5px; padding: 0 15px; border: 0; border-radius: 6px; background: #08aa8e; color: #fff; font-size: 12px; font-weight: 900; cursor: pointer; }
+.placeholder button:focus-visible { outline: 3px solid #66daca; outline-offset: 3px; }
+.placeholder button:disabled { opacity: .55; cursor: wait; }

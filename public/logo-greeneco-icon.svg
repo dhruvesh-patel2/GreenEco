@@ -1,0 +1,8 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Greeneco</title>
+  <circle cx="48" cy="48" r="45" fill="#081923" stroke="#00D8DE" stroke-width="3"/>
+  <text x="16" y="53" fill="#85A2A6" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">Green</text>
+  <text x="57" y="53" fill="#00D8DE" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="800">eco</text>
+  <path d="M75 27C78 33 79.6 39.1 79.6 45.7" stroke="#00D8DE" stroke-width="3.8" stroke-linecap="round"/>
+  <path d="M82 24C86 30.3 88 37.5 88 45.2" stroke="#00D8DE" stroke-width="3.8" stroke-linecap="round"/>
+</svg>

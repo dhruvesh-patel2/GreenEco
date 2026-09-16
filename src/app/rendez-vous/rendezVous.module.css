@@ -1,0 +1,783 @@
+.page {
+  background: #ffffff;
+  color: #081923;
+}
+
+.hero {
+  min-height: clamp(230px, 24vw, 350px);
+  padding: 48px max(28px, calc((100vw - 1180px) / 2));
+  display: flex;
+  align-items: center;
+  background-color: #081923;
+  background-image:
+    linear-gradient(90deg, rgba(8, 25, 35, 0.9) 0%, rgba(8, 25, 35, 0.74) 44%, rgba(8, 25, 35, 0.2) 100%),
+    url("/baner1.png");
+  background-position: center 52%;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.heroContent {
+  max-width: 620px;
+}
+
+.heroContent p {
+  margin: 0 0 10px;
+  color: #2ff0d6;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.heroContent h1 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: 0;
+}
+
+.heroContent span {
+  display: block;
+  max-width: 540px;
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.bookingSection {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 28px 28px 54px;
+}
+
+.bookingGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+  gap: 18px;
+  align-items: start;
+}
+
+.formCard,
+.sideCard,
+.locationCard,
+.mapFrame,
+.mapPreview,
+.imagePreview {
+  border: 1px solid #e1ebef;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 16px 36px rgba(8, 25, 35, 0.06);
+}
+
+.formCard {
+  padding: 28px 32px 32px;
+}
+
+.formHeader h1 {
+  margin: 0;
+  color: #081923;
+  font-size: clamp(30px, 3vw, 40px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.formHeader p {
+  margin: 8px 0 0;
+  color: #5d6c7f;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.steps {
+  position: relative;
+  margin: 34px 0 28px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 16%;
+  right: 16%;
+  height: 2px;
+  background: #d9e4ea;
+}
+
+.steps li {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  color: #69798a;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.steps span {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #dce6eb;
+  color: #526477;
+  font-size: 13px;
+  font-weight: 900;
+  z-index: 1;
+}
+
+.steps p {
+  margin: 0;
+}
+
+.activeStep span {
+  background: #047d74;
+  color: #ffffff;
+}
+
+.activeStep {
+  color: #081923;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.fieldGrid label,
+.fullField {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.fullField {
+  margin-top: 18px;
+}
+
+.fieldGrid span,
+.fullField > span {
+  color: #1a2d3b;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.formCard input,
+.formCard select,
+.formCard textarea {
+  width: 100%;
+  border: 1px solid #d9e6eb;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #081923;
+  font-size: 15px;
+  font-weight: 650;
+  outline: 0;
+}
+
+.formCard input,
+.formCard select {
+  height: 48px;
+  padding: 0 16px;
+}
+
+.formCard textarea {
+  min-height: 86px;
+  resize: vertical;
+  padding: 14px 16px;
+}
+
+.formCard input::placeholder,
+.formCard textarea::placeholder {
+  color: #99a9b7;
+}
+
+.fullField small {
+  justify-self: end;
+  margin-top: -2px;
+  color: #647486;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.submitButton {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 7px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #0bb89d;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(11, 184, 157, 0.18);
+}
+
+.sideCard {
+  padding: 26px 24px;
+}
+
+.questionHeader {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.questionHeader > span,
+.phoneLine svg,
+.urgentBox > svg {
+  color: #0bb89d;
+}
+
+.questionHeader h2,
+.popularTitle {
+  margin: 0;
+  color: #081923;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.questionHeader p {
+  margin: 8px 0 0;
+  color: #6a7a8c;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.phoneLine {
+  min-height: 68px;
+  margin-top: 26px;
+  border-radius: 8px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #f5f9fb;
+  color: #536478;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.urgentBox {
+  margin-top: 16px;
+  border-radius: 8px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 14px;
+  background: #dcfaf5;
+  color: #215062;
+}
+
+.urgentBox h3 {
+  margin: 0;
+  color: #0b5c57;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.urgentBox p {
+  margin: 6px 0 0;
+  color: #42677a;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.popularTitle {
+  margin-top: 28px;
+}
+
+.popularList {
+  margin-top: 14px;
+  display: grid;
+}
+
+.popularList a {
+  min-height: 58px;
+  border: 1px solid #e0eaee;
+  border-bottom: 0;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #1b2f3e;
+  font-size: 15px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.popularList a:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.popularList a:last-child {
+  border-bottom: 1px solid #e0eaee;
+  border-radius: 0 0 8px 8px;
+}
+
+.popularList svg {
+  color: #0bb89d;
+}
+
+.locationGrid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: minmax(250px, 0.86fr) minmax(320px, 1fr) minmax(260px, 0.88fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.locationCard {
+  padding: 34px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #90a0b0;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.locationCard h2 {
+  margin: 0;
+  color: #081923;
+  font-size: clamp(24px, 2.5vw, 32px);
+  line-height: 1.08;
+  font-weight: 900;
+}
+
+.locationCard address {
+  margin: 20px 0 18px;
+  color: #263c50;
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+.locationCard a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0bb89d;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.locationCard > p:last-child {
+  margin: 28px 0 0;
+  color: #758395;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.mapPreview {
+  position: relative;
+  min-height: 290px;
+  overflow: hidden;
+  background:
+    linear-gradient(30deg, transparent 0 44%, rgba(119, 184, 210, 0.38) 45% 50%, transparent 51%),
+    linear-gradient(126deg, transparent 0 34%, rgba(234, 189, 103, 0.22) 35% 38%, transparent 39%),
+    linear-gradient(90deg, #f6f1e9 0 2px, transparent 2px 100%),
+    linear-gradient(0deg, #e2e8e7 0 2px, transparent 2px 100%),
+    #eef3f2;
+  background-size:
+    100% 100%,
+    100% 100%,
+    54px 54px,
+    54px 54px,
+    auto;
+}
+
+.mapFrame {
+  display: block;
+  width: 100%;
+  min-height: 290px;
+}
+
+.mapPreview::before {
+  content: "";
+  position: absolute;
+  left: 46%;
+  top: 38%;
+  width: 32px;
+  height: 32px;
+  border-radius: 50% 50% 50% 0;
+  background: #0bb89d;
+  transform: rotate(-45deg);
+  box-shadow: 0 6px 16px rgba(8, 25, 35, 0.2);
+}
+
+.mapPreview::after {
+  content: "";
+  position: absolute;
+  left: calc(46% + 10px);
+  top: calc(38% + 10px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.mapPreview span {
+  position: absolute;
+  left: calc(46% + 44px);
+  top: calc(38% + 2px);
+  border-radius: 4px;
+  padding: 8px 12px;
+  background: #ffffff;
+  color: #081923;
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(8, 25, 35, 0.1);
+}
+
+.imagePreview {
+  min-height: 290px;
+  background-color: #3b3b3b;
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.09) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.09) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.09) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.09) 75%);
+  background-position:
+    0 0,
+    0 54px,
+    54px -54px,
+    -54px 0;
+  background-size: 108px 108px;
+}
+
+.trustStrip {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.trustItem {
+  min-width: 0;
+  min-height: 118px;
+  padding: 18px 28px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.trustItem + .trustItem {
+  border-left: 1px solid #dfe8ec;
+}
+
+.trustItem svg {
+  margin-bottom: 12px;
+  color: #0bb89d;
+}
+
+.trustItem h2 {
+  margin: 0;
+  color: #081923;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.trustItem p {
+  margin: 7px 0 0;
+  color: #687889;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+@media (max-width: 1050px) {
+  .bookingGrid,
+  .locationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sideCard {
+    order: -1;
+  }
+
+  .locationCard,
+  .mapFrame,
+  .mapPreview,
+  .imagePreview {
+    min-height: 230px;
+  }
+}
+
+@media (max-width: 700px) {
+  .bookingSection {
+    padding: 20px 16px 42px;
+  }
+
+  .formCard,
+  .sideCard,
+  .locationCard {
+    padding: 22px 18px;
+  }
+
+  .fieldGrid,
+  .trustStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .trustItem + .trustItem {
+    border-left: 0;
+    border-top: 1px solid #dfe8ec;
+  }
+
+  .steps li {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 901px) {
+  .hero {
+    min-height: clamp(190px, 18vw, 270px);
+    padding-top: 42px;
+    padding-bottom: 42px;
+    background-position: center 52%;
+    background-size: cover;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(30px, 3vw, 44px);
+  }
+
+  .bookingSection {
+    max-width: 1180px;
+    padding-top: 22px;
+    padding-bottom: 42px;
+  }
+
+  .bookingGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    gap: 14px;
+  }
+
+  .formCard {
+    padding: 22px 26px 26px;
+  }
+
+  .formHeader h1 {
+    font-size: clamp(24px, 2.4vw, 32px);
+  }
+
+  .formHeader p {
+    font-size: 13px;
+  }
+
+  .steps {
+    margin: 26px 0 22px;
+  }
+
+  .steps li {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .steps span {
+    width: 23px;
+    height: 23px;
+    font-size: 11px;
+  }
+
+  .steps::before {
+    top: 11px;
+  }
+
+  .fieldGrid {
+    gap: 14px;
+  }
+
+  .fieldGrid label,
+  .fullField {
+    gap: 6px;
+  }
+
+  .fullField {
+    margin-top: 14px;
+  }
+
+  .fieldGrid span,
+  .fullField > span {
+    font-size: 12px;
+  }
+
+  .formCard input,
+  .formCard select,
+  .formCard textarea {
+    font-size: 13px;
+  }
+
+  .formCard input,
+  .formCard select {
+    height: 40px;
+    padding: 0 13px;
+  }
+
+  .formCard textarea {
+    min-height: 72px;
+    padding: 12px 13px;
+  }
+
+  .submitButton {
+    min-height: 44px;
+    gap: 9px;
+    font-size: 13px;
+  }
+
+  .sideCard {
+    padding: 21px 19px;
+  }
+
+  .questionHeader {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .questionHeader > span svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .questionHeader h2,
+  .popularTitle {
+    font-size: 17px;
+  }
+
+  .questionHeader p {
+    font-size: 12px;
+  }
+
+  .phoneLine {
+    min-height: 54px;
+    margin-top: 20px;
+    padding: 0 14px;
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .urgentBox {
+    margin-top: 13px;
+    padding: 14px;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .urgentBox h3 {
+    font-size: 13px;
+  }
+
+  .urgentBox p {
+    font-size: 11px;
+  }
+
+  .popularTitle {
+    margin-top: 22px;
+  }
+
+  .popularList {
+    margin-top: 11px;
+  }
+
+  .popularList a {
+    min-height: 46px;
+    padding: 0 13px;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .locationGrid {
+    margin-top: 18px;
+    gap: 14px;
+  }
+
+  .locationCard {
+    padding: 26px;
+  }
+
+  .eyebrow {
+    gap: 9px;
+    font-size: 11px;
+  }
+
+  .locationCard h2 {
+    font-size: clamp(21px, 2vw, 27px);
+  }
+
+  .locationCard address {
+    margin: 15px 0 14px;
+    font-size: 13px;
+  }
+
+  .locationCard a {
+    font-size: 13px;
+  }
+
+  .locationCard > p:last-child {
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .mapPreview,
+  .mapFrame,
+  .imagePreview {
+    min-height: 230px;
+  }
+
+  .mapPreview span {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .trustStrip {
+    margin-top: 26px;
+  }
+
+  .trustItem {
+    min-height: 94px;
+    padding: 14px 22px;
+  }
+
+  .trustItem svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 9px;
+  }
+
+  .trustItem h2 {
+    font-size: 13px;
+  }
+
+  .trustItem p {
+    font-size: 11px;
+  }
+}

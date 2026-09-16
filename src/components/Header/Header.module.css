@@ -1,0 +1,373 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  isolation: isolate;
+  width: 100%;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 1px 0 rgba(8, 25, 35, 0.08);
+}
+
+.topBar {
+  background: #081923;
+  color: #ffffff;
+  height: 48px;
+}
+
+.topContainer {
+  width: min(1320px, calc(100% - 48px));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.topContainer p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.smallLogo {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.smallLogo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.mainBar {
+  height: 70px;
+  background: #ffffff;
+  border-bottom: 1px solid #edf2f2;
+}
+
+.mainContainer {
+  width: min(1320px, calc(100% - 48px));
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.logo img {
+  width: 175px;
+  height: auto;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: 30px;
+}
+
+.nav a {
+  position: relative;
+  color: #050505;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -23px;
+  left: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.nav a:hover {
+  color: #03a98d;
+}
+
+.nav .activeLink {
+  color: #06a88e;
+}
+
+.nav .activeLink::after {
+  background: #06d7c1;
+}
+
+.actions {
+  margin-left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.iconButton {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000000;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #000000;
+}
+
+.phoneText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.phoneText a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.phoneText span {
+  margin-top: 5px;
+  font-size: 7px;
+  font-weight: 800;
+}
+
+.appointment {
+  min-height: 44px;
+  padding: 0 19px;
+  border-radius: 30px;
+  background: #07aa8d;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.appointment:hover {
+  background: #05997f;
+  transform: translateY(-1px);
+}
+
+.activeAppointment {
+  background: #081923;
+  box-shadow: inset 0 0 0 2px #10c9ae;
+}
+
+.appointment span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.menuButton {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  background: #081923;
+  color: #ffffff;
+  display: none;
+  place-items: center;
+  cursor: pointer;
+}
+
+@media (max-width: 1450px) {
+  .mainContainer {
+    width: calc(100% - 36px);
+  }
+
+  .nav {
+    gap: 18px;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  .actions {
+    gap: 14px;
+    margin-left: 22px;
+  }
+
+  .logo img {
+    width: 165px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav {
+    display: none;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .menuButton {
+    display: grid;
+  }
+}
+
+@media (max-width: 700px) {
+  .topBar {
+    height: 46px;
+  }
+
+  .topContainer {
+    width: calc(100% - 30px);
+    gap: 12px;
+  }
+
+  .topContainer p {
+    font-size: 13px;
+  }
+
+  .smallLogo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .smallLogo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mainBar {
+    height: 64px;
+  }
+
+  .mainContainer {
+    width: calc(100% - 30px);
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  .phone,
+  .appointment {
+    display: none;
+  }
+
+  .actions {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 701px) {
+  .topBar {
+    height: 40px;
+  }
+
+  .topContainer {
+    width: min(1240px, calc(100% - 40px));
+    gap: 14px;
+  }
+
+  .topContainer p {
+    font-size: 13px;
+  }
+
+  .smallLogo,
+  .smallLogo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mainBar {
+    height: 58px;
+  }
+
+  .mainContainer {
+    width: min(1240px, calc(100% - 40px));
+  }
+
+  .logo img {
+    width: 145px;
+  }
+
+  .nav {
+    gap: 17px;
+    margin-left: 24px;
+  }
+
+  .nav a {
+    font-size: 13px;
+  }
+
+  .nav a::after {
+    bottom: -19px;
+    height: 2px;
+  }
+
+  .actions {
+    gap: 11px;
+    margin-left: 20px;
+  }
+
+  .iconButton {
+    width: 26px;
+    height: 26px;
+  }
+
+  .iconButton svg,
+  .phone > svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .phone {
+    gap: 9px;
+  }
+
+  .phoneText a {
+    font-size: 12px;
+  }
+
+  .phoneText span {
+    margin-top: 4px;
+    font-size: 6px;
+  }
+
+  .appointment {
+    min-height: 38px;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+
+  .appointment span {
+    font-size: 17px;
+  }
+}
