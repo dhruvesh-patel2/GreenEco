@@ -95,12 +95,12 @@
 }
 
 .cardHeader span {
-  color: #718094;
+  color: #5d6b7d;
   font-size: 12px;
 }
 
 .googleMark {
-  color: #4285f4 !important;
+  color: #1967d2 !important;
   font-size: 15px !important;
   font-weight: 800;
 }
@@ -121,7 +121,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: #079b83;
+  color: #087c69;
   font-size: 13px;
   font-weight: 800;
   text-decoration: none;
@@ -135,19 +135,31 @@
 }
 
 .dots button {
-  width: 8px;
-  height: 8px;
+  position: relative;
+  width: 24px;
+  height: 24px;
   padding: 0;
   border: 0;
-  border-radius: 50%;
-  background: #dce5e9;
+  background: transparent;
   cursor: pointer;
 }
 
-.dots .activeDot {
+.dots button::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c8d3d8;
+}
+
+.dots .activeDot::before {
+  left: 1px;
   width: 22px;
   border-radius: 999px;
-  background: #10c9ae;
+  background: #087c69;
 }
 
 @media (max-width: 700px) {

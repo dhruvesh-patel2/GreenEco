@@ -21,3 +21,5 @@ export const business = {
   mapsEmbedUrl:
     "https://www.google.com/maps?q=GreenEco%2033%20Rue%20de%20la%20Varenne%2094100%20Saint-Maur-des-Foss%C3%A9s&output=embed",
 };
+
+export const ONLINE_BOOKING_ENABLED = false;

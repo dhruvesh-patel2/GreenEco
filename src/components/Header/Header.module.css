@@ -104,7 +104,7 @@
 }
 
 .nav .activeLink {
-  color: #06a88e;
+  color: #087c69;
 }
 
 .nav .activeLink::after {
@@ -162,7 +162,7 @@
   min-height: 44px;
   padding: 0 19px;
   border-radius: 30px;
-  background: #07aa8d;
+  background: #087c69;
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;

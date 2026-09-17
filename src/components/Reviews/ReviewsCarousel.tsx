@@ -27,7 +27,11 @@ export default function ReviewsCarousel({ data }: ReviewsCarouselProps) {
     <div className={styles.wrapper}>
       <div className={styles.summary}>
         <strong>{data.rating.toFixed(1).replace(".", ",")}</strong>
-        <span className={styles.summaryStars} aria-label={`${data.rating} sur 5`}>
+        <span
+          className={styles.summaryStars}
+          role="img"
+          aria-label={`${data.rating} sur 5`}
+        >
           {Array.from({ length: 5 }, (_, index) => (
             <Star
               key={index}
@@ -62,7 +66,11 @@ export default function ReviewsCarousel({ data }: ReviewsCarouselProps) {
             <span className={styles.googleMark}>Google</span>
           </div>
 
-          <div className={styles.stars} aria-label={`${review.rating} sur 5`}>
+          <div
+            className={styles.stars}
+            role="img"
+            aria-label={`${review.rating} sur 5`}
+          >
             {Array.from({ length: 5 }, (_, index) => (
               <Star
                 key={index}
@@ -84,7 +92,7 @@ export default function ReviewsCarousel({ data }: ReviewsCarouselProps) {
         </button>
       </div>
 
-      <div className={styles.dots} aria-label="Choisir un avis">
+      <div className={styles.dots} role="group" aria-label="Choisir un avis">
         {data.reviews.map((item, index) => (
           <button
             type="button"

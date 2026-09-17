@@ -77,6 +77,207 @@
   padding: 28px 32px 32px;
 }
 
+.offlineSection {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 58px 0 66px;
+}
+
+.offlineSectionLabel {
+  margin: 0 0 17px;
+  color: #079b83;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.offlineMainCard {
+  padding: 45px 54px;
+  border: 1px solid #dce7ea;
+  border-radius: 22px;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 14px 38px rgba(8, 25, 35, 0.055);
+}
+
+.offlineBadge {
+  width: fit-content;
+  margin: 0 auto 14px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #ddf9f4;
+  color: #078f79;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.offlineMainCard h2 {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #081923;
+  font-size: clamp(29px, 3vw, 39px);
+  line-height: 1.1;
+}
+
+.offlineIntro {
+  max-width: 700px;
+  margin: 15px auto 0;
+  color: #52656e;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.phoneAction {
+  max-width: 620px;
+  margin: 28px auto 0;
+  padding: 22px 25px;
+  border-top: 1px solid #dfe9eb;
+  border-bottom: 1px solid #dfe9eb;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 17px;
+  text-align: left;
+}
+
+.phoneActionIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e0f9f5;
+  color: #079b83;
+}
+
+.phoneAction strong,
+.phoneAction a,
+.phoneAction p {
+  display: block;
+}
+
+.phoneAction strong {
+  color: #43565e;
+  font-size: 13px;
+}
+
+.phoneAction a {
+  width: fit-content;
+  margin-top: 4px;
+  color: #081923;
+  font-size: clamp(24px, 3vw, 31px);
+  line-height: 1.1;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.phoneAction p {
+  margin: 6px 0 0;
+  color: #6d7e85;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.offlineCallButton {
+  width: min(360px, 100%);
+  min-height: 52px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #0bb89d;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: background 0.18s ease;
+}
+
+.offlineCallButton:hover {
+  background: #079b84;
+}
+
+.offlineCallButton:focus-visible,
+.phoneAction a:focus-visible,
+.offlineInfoCard a:focus-visible {
+  outline: 3px solid #63dac8;
+  outline-offset: 4px;
+}
+
+.preparationTip {
+  max-width: 680px;
+  margin: 17px auto 0;
+  color: #718087;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.offlineInfoGrid {
+  margin-top: 27px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.offlineInfoCard {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #dfe8ea;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  background: #ffffff;
+}
+
+.offlineInfoCard > svg {
+  color: #0aaa91;
+}
+
+.offlineInfoCard h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.offlineInfoCard p,
+.offlineInfoCard address,
+.offlineInfoCard small {
+  margin: 0;
+  color: #5c6e76;
+  font-size: 13px;
+  line-height: 1.55;
+  font-style: normal;
+}
+
+.offlineInfoCard a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 11px;
+  color: #078f79;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.offlineInfoCard .infoPhone {
+  margin: 0 0 7px;
+  color: #081923;
+  font-size: 17px;
+}
+
+.offlineInfoCard small {
+  display: block;
+  margin-top: 5px;
+}
+
 .formHeader h1 {
   margin: 0;
   color: #081923;
@@ -555,6 +756,59 @@
 
   .steps li {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 820px) {
+  .offlineSection {
+    padding-top: 40px;
+  }
+
+  .offlineMainCard {
+    padding: 38px 30px;
+  }
+
+  .offlineInfoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .offlineSection {
+    width: calc(100% - 30px);
+    padding: 31px 0 42px;
+  }
+
+  .offlineMainCard {
+    padding: 27px 20px;
+    border-radius: 14px;
+  }
+
+  .offlineMainCard h2 {
+    font-size: 27px;
+  }
+
+  .offlineIntro {
+    font-size: 14px;
+  }
+
+  .phoneAction {
+    padding: 20px 0;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .phoneActionIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .phoneAction a {
+    font-size: 23px;
+  }
+
+  .offlineInfoCard {
+    padding: 19px;
   }
 }
 

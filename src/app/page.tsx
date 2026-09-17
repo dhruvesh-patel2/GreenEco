@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import {
   BatteryCharging,
@@ -232,6 +232,28 @@ const scooterBrands = [
 
 export default async function Home() {
   const googleReviews = await getGoogleReviews();
+  const heroImageCommon = {
+    alt: "",
+    sizes: "100vw",
+    fetchPriority: "high" as const,
+    loading: "eager" as const,
+  };
+  const {
+    props: { srcSet: heroDesktopSrcSet },
+  } = getImageProps({
+    ...heroImageCommon,
+    src: "/baner1.png",
+    width: 1440,
+    height: 798,
+    quality: 75,
+  });
+  const { props: heroMobileProps } = getImageProps({
+    ...heroImageCommon,
+    src: "/baner1-1.png",
+    width: 1254,
+    height: 1254,
+    quality: 65,
+  });
 
   return (
     <>
@@ -244,25 +266,15 @@ export default async function Home() {
 
       <section className={styles.sectionOne} aria-labelledby="hero-title">
         <div className={styles.hero}>
-          <div className={styles.heroMedia} aria-hidden="true">
-            <Image
-              className={`${styles.heroImage} ${styles.heroDesktopImage}`}
-              src="/baner1.png"
+          <picture className={styles.heroMedia}>
+            <source media="(min-width: 901px)" srcSet={heroDesktopSrcSet} />
+            <source media="(max-width: 900px)" srcSet="/baner1-mobile.webp" />
+            <img
+              {...heroMobileProps}
               alt=""
-              width={1440}
-              height={798}
-              priority
-              sizes="100vw"
+              className={styles.heroImage}
             />
-            <Image
-              className={`${styles.heroImage} ${styles.heroMobileImage}`}
-              src="/baner1-1.png"
-              alt=""
-              width={1254}
-              height={1254}
-              sizes="100vw"
-            />
-          </div>
+          </picture>
 
           <div className={styles.heroContent}>
             <p className={styles.heroBadge}>Réparation- entretien-conseil</p>
@@ -290,7 +302,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className={styles.brandStrip} aria-label="Marques réparées">
+        <div className={styles.brandStrip}>
           <div className={styles.brandInner}>
             <h2>Nous réparons toutes les grandes marques</h2>
             <div className={styles.brandGrid}>
@@ -298,7 +310,6 @@ export default async function Home() {
                 <div className={styles.brandLogo} key={brand.name}>
                   <span
                     className={`${styles.brandWordmark} ${styles[brand.className]}`}
-                    aria-label={brand.name}
                   >
                     {brand.name}
                   </span>
@@ -339,7 +350,7 @@ export default async function Home() {
                   alt={`${service.title} GreenEco`}
                   width={720}
                   height={420}
-                  sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 20vw"
+                  sizes="(max-width: 700px) calc(100vw - 36px), (max-width: 1100px) 50vw, 20vw"
                 />
 
                 <div className={styles.serviceBody}>
@@ -368,7 +379,11 @@ export default async function Home() {
                 </span>
                 <h3>{advantage.title}</h3>
                 {advantage.rating ? (
-                  <div className={styles.rating} aria-label={`Note ${business.rating} sur Google`}>
+                  <div
+                    className={styles.rating}
+                    role="img"
+                    aria-label={`Note ${business.rating} sur 5 sur Google`}
+                  >
                     {Array.from({ length: 5 }, (_, index) => (
                       <Star key={index} size={18} fill="currentColor" />
                     ))}
@@ -431,7 +446,7 @@ export default async function Home() {
               alt="Atelier GreenEco de réparation de trottinettes électriques à Saint-Maur"
               width={1672}
               height={941}
-              sizes="(max-width: 900px) 100vw, 50vw"
+              sizes="(max-width: 900px) calc(100vw - 36px), 50vw"
             />
           </div>
         </div>
@@ -486,7 +501,7 @@ export default async function Home() {
               alt="Réparation durable d'une trottinette électrique dans l'atelier GreenEco"
               width={1536}
               height={1024}
-              sizes="(max-width: 900px) 100vw, 52vw"
+              sizes="(max-width: 900px) calc(100vw - 36px), 52vw"
             />
             <div className={styles.sustainableCard}>
               <span />

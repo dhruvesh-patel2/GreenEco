@@ -17,7 +17,7 @@ const legalLinks = [
   { href: "/politique-de-confidentialite", label: "Politique de confidentialité" },
   { href: "/mentions-legales", label: "Mentions légales" },
   { href: "/politique-cookies", label: "Cookies" },
-  { href: "/conditions-generales", label: "CGV" },
+  { href: "/conditions-generales", label: "Conditions générales" },
 ];
 
 const socialLinks = ["ig", "f", "t", "yt", "in"];

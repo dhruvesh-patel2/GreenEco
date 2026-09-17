@@ -33,14 +33,6 @@
   object-fit: contain;
 }
 
-.heroDesktopImage {
-  display: block;
-}
-
-.heroMobileImage {
-  display: none;
-}
-
 .heroContent {
   grid-area: 1 / 1;
   z-index: 2;
@@ -174,7 +166,7 @@
 }
 
 .xiaomi {
-  color: #f56600;
+  color: #a94400;
 }
 
 .ninebot {
@@ -183,7 +175,7 @@
 }
 
 .etwow {
-  color: #2676a9;
+  color: #1d628f;
   font-size: 20px;
 }
 
@@ -198,7 +190,7 @@
 }
 
 .vsett {
-  color: #0d937e;
+  color: #08715f;
   font-style: italic;
 }
 
@@ -227,7 +219,7 @@
 .sectionLabel {
   position: relative;
   margin: 0 0 8px 48px;
-  color: #10c9ae;
+  color: #087c69;
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
@@ -256,7 +248,7 @@
 }
 
 .servicesHeader h2 span {
-  color: #12d0b2;
+  color: #087c69;
 }
 
 .servicesLead {
@@ -269,7 +261,7 @@
 .allServicesLink {
   flex: 0 0 auto;
   margin-top: 34px;
-  color: #0fb99e;
+  color: #087c69;
   font-size: 14px;
   font-weight: 900;
   text-decoration: none;
@@ -337,7 +329,7 @@
 .serviceLink {
   display: inline-flex;
   margin: 0 20px 22px;
-  color: #0ac5a9;
+  color: #087c69;
   font-size: 13px;
   font-weight: 900;
   text-decoration: none;
@@ -431,7 +423,7 @@
 }
 
 .workshopContent h2 span {
-  color: #10c9ae;
+  color: #087c69;
 }
 
 .workshopLead {
@@ -601,7 +593,7 @@
   align-items: center;
   gap: 18px;
   margin: 0 0 12px;
-  color: #0fb99e;
+  color: #087c69;
   font-size: 14px;
   font-weight: 900;
   text-transform: uppercase;
@@ -716,7 +708,7 @@
   align-items: center;
   justify-content: center;
   background: #f5fbfb;
-  color: #4d8790;
+  color: #326b73;
   font-size: 14px;
   font-weight: 800;
 }
@@ -852,7 +844,7 @@
   margin-top: 50px;
   padding-bottom: 6px;
   border-bottom: 1px solid #94ddd6;
-  color: #0fb99e;
+  color: #087c69;
   font-size: 18px;
   font-weight: 900;
   text-decoration: none;
@@ -1104,14 +1096,6 @@
     background: linear-gradient(180deg, rgba(8, 25, 35, 0.12) 0%, rgba(8, 25, 35, 0.28) 38%, rgba(8, 25, 35, 0.88) 100%);
   }
 
-  .heroDesktopImage {
-    display: none;
-  }
-
-  .heroMobileImage {
-    display: block;
-  }
-
   .heroContent {
     width: auto;
     margin: 42px 26px 44px;
@@ -1162,7 +1146,7 @@
     min-height: 0;
   }
 
-  .heroMobileImage {
+  .heroImage {
     opacity: 0.9;
   }
 

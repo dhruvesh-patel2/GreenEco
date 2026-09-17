@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
+  Clock,
   ChevronRight,
   Headphones,
   Info,
@@ -11,7 +12,7 @@ import {
   ShieldCheck,
   Truck,
 } from "lucide-react";
-import { business } from "@/lib/site";
+import { business, ONLINE_BOOKING_ENABLED } from "@/lib/site";
 import ExternalMap from "@/components/CookieConsent/ExternalMap";
 import styles from "./rendezVous.module.css";
 
@@ -61,14 +62,20 @@ export default function RendezVousPage() {
       <section className={styles.hero} aria-labelledby="appointment-hero-title">
         <div className={styles.heroContent}>
           <p>Rendez-vous GreenEco</p>
-          <h1 id="appointment-hero-title">Réserver un diagnostic à Saint-Maur</h1>
+          <h1 id="appointment-hero-title">
+            {ONLINE_BOOKING_ENABLED
+              ? "Réserver un diagnostic à Saint-Maur"
+              : "Prenez rendez-vous avec notre atelier"}
+          </h1>
           <span>
-            Pour une panne inconnue, une batterie ou un souci électronique,
-            prenez un créneau ou appelez l&apos;atelier avant de venir.
+            {ONLINE_BOOKING_ENABLED
+              ? "Pour une panne inconnue, une batterie ou un souci électronique, prenez un créneau ou appelez l'atelier avant de venir."
+              : "Un problème avec votre trottinette ou votre vélo électrique ? Contactez notre atelier à Saint-Maur-des-Fossés pour organiser votre prise en charge."}
           </span>
         </div>
       </section>
 
+      {ONLINE_BOOKING_ENABLED ? (
       <section className={styles.bookingSection} aria-labelledby="booking-title">
         <div className={styles.bookingGrid}>
           <form className={styles.formCard}>
@@ -235,6 +242,58 @@ export default function RendezVousPage() {
           })}
         </div>
       </section>
+      ) : (
+        <section className={styles.offlineSection} aria-labelledby="booking-title">
+          <p className={styles.offlineSectionLabel}>Prise de rendez-vous</p>
+
+          <div className={styles.offlineMainCard}>
+            <p className={styles.offlineBadge}>Rendez-vous en ligne</p>
+            <h2 id="booking-title">Les réservations en ligne arrivent bientôt</h2>
+            <p className={styles.offlineIntro}>
+              Notre système de réservation est actuellement en cours de
+              configuration. En attendant son activation, notre équipe prend
+              directement vos rendez-vous par téléphone.
+            </p>
+
+            <div className={styles.phoneAction}>
+              <span className={styles.phoneActionIcon} aria-hidden="true">
+                <Phone size={25} strokeWidth={2.2} />
+              </span>
+              <div>
+                <strong>Appelez directement l&apos;atelier</strong>
+                <a href="tel:0951541443">{business.phone}</a>
+                <p>Notre équipe vous indiquera les créneaux disponibles.</p>
+              </div>
+            </div>
+
+            <a className={styles.offlineCallButton} href="tel:0951541443">
+              <Phone size={19} fill="currentColor" />
+              Appeler le {business.phone}
+            </a>
+
+            <p className={styles.preparationTip}>
+              Pour faciliter votre prise en charge, vous pouvez préparer la
+              marque, le modèle de votre véhicule et une courte description du
+              problème rencontré.
+            </p>
+          </div>
+
+          <div className={styles.offlineInfoGrid}>
+            <article className={styles.offlineInfoCard}>
+              <MapPin size={21} />
+              <div><h3>Atelier</h3><address>{business.addressStreet}<br />{business.postalCode} {business.city}</address><a href={business.mapsUrl}>Voir l&apos;itinéraire <span>→</span></a></div>
+            </article>
+            <article className={styles.offlineInfoCard}>
+              <Phone size={21} />
+              <div><h3>Nous appeler</h3><a className={styles.infoPhone} href="tel:0951541443">{business.phone}</a><p>Pour connaître les disponibilités et réserver votre passage.</p><a href="tel:0951541443">Appeler <span>→</span></a></div>
+            </article>
+            <article className={styles.offlineInfoCard}>
+              <Clock size={21} />
+              <div><h3>Horaires</h3><p>{business.hoursDisplay}</p><small>Dimanche : fermé</small></div>
+            </article>
+          </div>
+        </section>
+      )}
     </article>
   );
 }
